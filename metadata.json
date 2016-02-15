@@ -1,0 +1,12 @@
+{
+  "name": "olavmrk-pci_devices_fact",
+  "version": "0.0.1",
+  "author": "Olav Morken",
+  "summary": "Provide a fact with PCI device identifiers",
+  "license": "MIT",
+  "source": "https://github.com/olavmrk/puppet-pci_devices_fact",
+  "project_page": "https://github.com/olavmrk/puppet-pci_devices_fact",
+  "issues_url": "https://github.com/olavmrk/puppet-pci_devices_fact/issues",
+  "dependencies": [],
+  "data_provider": null
+}
