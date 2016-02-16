@@ -5,7 +5,7 @@ Facter.add(:pci_devices) do
   setcode do
     pci_devices = Set.new
 
-    Dir['/sys/class/pci_bus/*/device/*'].each do |device_dir|
+    Dir['/sys/bus/pci/devices/*'].each do |device_dir|
       unless File.directory?(device_dir) then
         next
       end
