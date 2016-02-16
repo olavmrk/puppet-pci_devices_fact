@@ -20,6 +20,6 @@ Facter.add(:pci_devices) do
       pci_devices.add(pci_device)
     end
 
-    pci_devices.to_a
+    pci_devices.to_a.sort
   end
 end
