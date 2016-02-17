@@ -5,6 +5,17 @@ require File.expand_path(File.dirname(__FILE__) + '/../../lib/facter/pci_devices
 describe 'pci_devices_fact' do
 
   before :example do
+
+    # This block overrides Dir['some/glob/*/pattern'] with a custom implementation.
+    # The custom implementation picks up Dir['/sys/some/path'] and redirects them to
+    # one of our sysfs placeholders.
+    #
+    # Our sysfs placeholders are located in spec/sysfs_variants
+    #
+    # The variant to use is controlled by sysfs_variant, and can be configured
+    # using let:
+    #   let(:sysfs_variant) { 'some_variant' }
+    #
     allow(Dir).to receive('[]').and_wrap_original do |original, *args|
       if args[0].start_with?('/sys/')
         variant_dir = File.dirname(__FILE__) + '/../sysfs_variants/' + sysfs_variant
@@ -13,6 +24,10 @@ describe 'pci_devices_fact' do
       end
       original.call(*args)
     end
+
+    # Reset Facter between each test case, so that it reevaluates
+    # our fact for each test case. This allows us to use
+    # a mock to change our code's behavior.
     Facter.reset
   end
 
