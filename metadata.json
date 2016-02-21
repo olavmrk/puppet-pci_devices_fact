@@ -8,5 +8,6 @@
   "project_page": "https://github.com/olavmrk/puppet-pci_devices_fact",
   "issues_url": "https://github.com/olavmrk/puppet-pci_devices_fact/issues",
   "dependencies": [],
+  "tags": [ "fact", "pci" ],
   "data_provider": null
 }
