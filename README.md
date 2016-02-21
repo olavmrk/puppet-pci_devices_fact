@@ -38,13 +38,25 @@ notice($::pci_devices)
 The `pci_devices` fact can be used to test for specific hardware in Puppet manifests.
 The simplest way is to use the [`in`-operator](https://docs.puppetlabs.com/puppet/latest/reference/lang_expressions.html#in) to check for the precence of one element in the array.
 
-For example, to install the Realtek firmware in the precense of one of their WiFi adapters:
+For example, to install the Realtek firmware if the machine has one of their WiFi adapters:
 
 ```
 if '10ec:8176' in $::pci_devices {
+  # RTL8188CE 802.11b/g/n WiFi Adapter
+  # http://pci-ids.ucw.cz/read/PC/10ec/8176
   ensure_packages('firmware-realtek')
 }
 ```
+
+To list the PCI IDs of the devices on the node, you can use the `lspci` utility with the `-nn` argument:
+
+```
+$ lspci -nn
+[...]
+01:00.0 Network controller [0280]: Realtek Semiconductor Co., Ltd. RTL8188CE 802.11b/g/n WiFi Adapter [10ec:8176] (rev 01)
+```
+
+The PCI ID is printed in the square brackets towards the end of the line.
 
 ## Reference
 
