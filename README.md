@@ -79,7 +79,7 @@ pci_devices => [
 ## Limitations
 
 This module retrieves the device list by enumerating the PCI devices found in sysfs on Linux.
-As such, only Linux is supported, and sysfs musb be available to the Puppet agent.
+As such, only Linux is supported, and sysfs must be available to the Puppet agent.
 
 ## Development
 
