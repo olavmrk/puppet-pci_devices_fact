@@ -4,7 +4,6 @@
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with pci_devices_fact](#setup)
-    * [What pci_devices_fact affects](#what-pci_devices_fact-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with pci_devices_fact](#beginning-with-pci_devices_fact)
 1. [Usage - Configuration options and additional functionality](#usage)
