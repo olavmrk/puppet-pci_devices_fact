@@ -21,7 +21,7 @@ The `pci_devices` fact can then be used to check available hardware on the node 
 
 ### Setup Requirements
 
-This module requires pushing a new fact to the node, and therefore requires Plugincync to be enabled.
+This module requires pushing a new fact to the node, and therefore requires [`pluginsync`](https://docs.puppetlabs.com/puppet/latest/reference/configuration.html#pluginsync) to be enabled on the Puppet agent.
 The fact is returned as an array, so if you are running Puppet 3.8 or older, you need to verify that the [`stringify_facts`](https://docs.puppetlabs.com/puppet/3.8/reference/configuration.html#stringifyfacts) option is set to `false`.
 
 ### Beginning with pci_devices_fact
