@@ -9,5 +9,11 @@
   "issues_url": "https://github.com/olavmrk/puppet-pci_devices_fact/issues",
   "dependencies": [],
   "tags": [ "fact", "pci" ],
-  "data_provider": null
+  "data_provider": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"Debian",
+      "operatingsystemrelease": [ "8" ]
+    }
+  ]
 }
